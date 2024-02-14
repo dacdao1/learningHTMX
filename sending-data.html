@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>HTMX special events</title>
+        <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <form>
+            <input type="text" name="title" placeholder="Product title"/>
+            <br />
+<!--             <input type="text" name="userId" placeholder="User Id"/>
+            <br /> -->
+            <button hx-post="https://dummyjson.com/products/add" hx-target="#response"  hx-ext="submitjson">
+                Submit
+            </button>
+        </form>
+        
+
+        <div id="response"></div>
+
+    </body>
+</html>

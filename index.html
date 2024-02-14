@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>Testing HTMX!</title>
+        <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+        <button type="button" hx-get="https://api.sportradar.com/tennis/trial/v3/en/competitors/sr:competitor:122366/versus/sr:competitor:23581/summaries.xml?api_key=n4ven37fgpt64rw4tcty2698" hx-target="#response" hx-request='{"noHeaders": true}'>
+            Show Message
+        </button>
+
+        <break></break>
+
+        <h3 id="response">
+        </h3>
+
+        <break></break>
+
+        
+        <h1 hx-get="https://jsonplaceholder.typicode.com/todos/5" hx-trigger="mouseenter">Testing the HTMX calls without a button</h1>
+
+        <break></break>
+
+        <input type="text" hx-post="https://jsonplaceholder.typicode.com/posts" hx-trigger="change">
+    </body>
+</html>

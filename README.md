@@ -16,3 +16,15 @@ No need for ui model or routing. Not a lot of user-interactivity, frontend frame
 
 Hypermedia API:
 API based on Hypermedia as the Engine of application state (HATEOAS). Provide more then just data, also include hypermedia like links.
+
+HOW TO USE HTMX:
+
+To use any of the RESTapi commands, use hx-{get,post, put, patch, delete} on the action attribute of the html file. Then use hx-target, to target the element(div, h1, p, etc...) that you want the data to display.
+
+Without the hx-target attribute, the data will load into the parent component that use the hx- call to the server.
+
+- hx-trigger will use different build in event to trigger the api call
+- hx-trigger can use the keyword, once, to only trigger that particular event once.
+- hx-trigger can use the keyword, delay:{enter the amount of time}, to trigger the event with that delay time.
+- hx-trigger can use the keyword, from:#{id of the atrribute the action is coming from}, to add the data to the current attribute. PLEASE look at the code within triggers.html for an example.
+- hx-trigger can use the keyword, click[{javascript code here}], and the code will execute the JavaScript code within the bracket.

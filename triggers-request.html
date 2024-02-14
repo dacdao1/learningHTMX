@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>HTMX triggers requests</title>
+        <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+        <!-- <div hx-post="https://jsonplaceholder.typicode.com/posts" hx-trigger="mouseenter once">
+            POST Request
+        </div> -->
+
+        <div hx-post="https://jsonplaceholder.typicode.com/posts" hx-trigger="click from:#requestTrigger">
+            Delay request
+        </div>
+
+        <break></break>
+
+
+        <button type="button" id="requestTrigger">
+            Trigger the post request
+        </button>
+    </body>
+</html>
