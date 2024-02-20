@@ -28,3 +28,14 @@ Without the hx-target attribute, the data will load into the parent component th
 - hx-trigger can use the keyword, delay:{enter the amount of time}, to trigger the event with that delay time.
 - hx-trigger can use the keyword, from:#{id of the atrribute the action is coming from}, to add the data to the current attribute. PLEASE look at the code within triggers.html for an example.
 - hx-trigger can use the keyword, click[{javascript code here}], and the code will execute the JavaScript code within the bracket.
+
+- hx-vals, to use javascript dynamic code within hx-vals to verify an input, use the following code
+  'js:{"addSomeJSCode": getJScode()}
+
+- hx-include will take in the id from whatever input field you want it to intake.
+
+- hx-confirm will have a pop up dialog box that will confirm to the user if they want to continue
+
+- to send a file in a post call, use form attribute to create a form. make sure the input type is file and the name is the same as the required field for that api. also include hx-encode = "multipart/form-data"
+
+- to have synchronized api triggering, use hx-sync="#{whichever is the first triggering id} : drop (for letting the first triggering id to go first and then this one will trigger after), replace (to make sure that the current button you are clicking will end the first triggering id and run the current button trigger user click), queue (the first triggering id will execute first and then the second id will trigger after.)

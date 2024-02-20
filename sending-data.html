@@ -9,15 +9,26 @@
     </head>
     <body>
         <form>
-            <input type="text" name="title" placeholder="Product title"/>
+           <!--  <input type="text" name="title" placeholder="Product title"/> -->
             <br />
 <!--             <input type="text" name="userId" placeholder="User Id"/>
             <br /> -->
-            <button hx-post="https://dummyjson.com/products/add" hx-target="#response"  hx-ext="submitjson">
+            <button hx-post="https://dummyjson.com/products/add" hx-target="#response" hx-include="#titleFieldToInclude">
                 Submit
             </button>
+
+            <!-- 
+                To use dynamic javascript within htmx, use the below code
+                <button hx-post="https://dummyjson.com/products/add" hx-target="#response"
+                hx-vals='js:{
+                    "email":"dac@dac.com",
+                    "pass" : getPassword()
+                }'>
+                Submit
+            </button> -->
         </form>
         
+        <input type="text" name="title" placeholder="product title but target by button above" id="titleFieldToInclude">
 
         <div id="response"></div>
 

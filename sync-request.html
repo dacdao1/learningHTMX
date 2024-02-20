@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>HTMX sync request</title>
+        <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <button id="firstRequest" hx-target="#target1" hx-get="https://dummyjson.com/products/2?delay=4000"> First Request</button>
+        <button id="secondRequest" hx-target="#target2" hx-sync="#firstRequest:drop" hx-get="https://dummyjson.com/products/1"> Second Request</button>
+
+        <div id="target1"> target 1</div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="target2"> target 2</div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible">
+        <title>HTMX confirm dialog</title>
+        <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <form>
+            <input type="file" name="file">
+            <button hx-post="https://api.escuelajs.co/api/v1/files/upload"
+                    hx-encoding="multipart/form-data"
+                    hx-target="#response"
+        >
+    Submit</button>
+        </form>
+
+        <div id="response"></div>
+        
+
+        <button hx-get="https://api.escuelajs.co/api/v1/files/100bf.txt" hx-target="#resulted">Retrieve the file</button>
+        <div id="resulted">Here is the result</div>
+    </body>
+</html>
